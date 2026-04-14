@@ -1171,6 +1171,73 @@
       align-self: flex-start;
     }
 
+    .service-item-img {
+      width: calc(100% + 48px);
+      margin: -24px -24px 16px -24px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .service-item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .service-item:hover .service-item-img img {
+      transform: scale(1.04);
+    }
+
+    .service-category-banner {
+      width: 100%;
+      height: 260px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+
+    .service-category-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .nail-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .nail-gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .nail-gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 600px) {
+      .nail-gallery {
+        grid-template-columns: 1fr;
+      }
+      .nail-gallery img {
+        height: 180px;
+      }
+    }
+
     @media (max-width: 600px) {
       .service-list {
         grid-template-columns: 1fr;
@@ -2531,6 +2598,9 @@
             </div>
 
             <div class="service-item">
+              <div class="service-item-img">
+                <img src="classic_set.jpeg" alt="Classic Lashes" />
+              </div>
               <div class="service-item-header">
                 <span class="service-item-name">Classic Lashes</span>
                 <span class="service-item-duration">1h 20min</span>
@@ -2560,6 +2630,9 @@
             </div>
 
             <div class="service-item">
+              <div class="service-item-img">
+                <img src="whipsy_set.jpeg" alt="Whispy Set" />
+              </div>
               <div class="service-item-header">
                 <span class="service-item-name">Whispy Set</span>
                 <span class="service-item-duration">2h</span>
@@ -2574,6 +2647,9 @@
             </div>
 
             <div class="service-item">
+              <div class="service-item-img">
+                <img src="wet_set.jpeg" alt="Wet Set" />
+              </div>
               <div class="service-item-header">
                 <span class="service-item-name">Wet Set</span>
                 <span class="service-item-duration">1h 30min</span>
@@ -2636,6 +2712,9 @@
         <div class="service-category">
           <h2 class="service-category-title">Eyebrow Services</h2>
           <hr class="service-category-divider">
+          <div class="service-category-banner">
+            <img src="eyebrow_pictures.jpeg" alt="Permanent Eyebrow Procedure" />
+          </div>
           <div class="service-list">
 
             <div class="service-item">
@@ -2715,6 +2794,11 @@
         <div class="service-category">
           <h2 class="service-category-title">Nail Services</h2>
           <hr class="service-category-divider">
+          <div class="nail-gallery">
+            <img src="nails1.jpeg" alt="Nail art example" />
+            <img src="nails2.jpeg" alt="Nail art example" />
+            <img src="nails3.jpeg" alt="Nail art example" />
+          </div>
           <div class="service-list">
 
             <div class="service-item">
