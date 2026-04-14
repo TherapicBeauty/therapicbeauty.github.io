@@ -999,17 +999,31 @@
     }
 
     .owner-photo {
-      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .owner-photo-img {
       border-radius: 20px;
       overflow: hidden;
       background: linear-gradient(135deg, var(--pink-light), var(--fawn-light));
       position: relative;
     }
 
-    .owner-photo img {
+    .owner-photo-img:first-child {
+      aspect-ratio: 3/4;
+    }
+
+    .owner-photo-img:last-child {
+      aspect-ratio: 4/3;
+    }
+
+    .owner-photo-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     .owner-content .script-accent {
@@ -2617,7 +2631,12 @@
       <div class="container">
         <div class="owner-grid">
           <div class="owner-photo">
-            <img src="owner-nonhlanhla-precious.jpeg" alt="Nonhlanhla Precious" />
+            <div class="owner-photo-img">
+              <img src="owner-nonhlanhla-precious.jpeg" alt="Nonhlanhla Precious" />
+            </div>
+            <div class="owner-photo-img">
+              <img src="me working.jpeg" alt="Nonhlanhla working on a client" />
+            </div>
           </div>
           <div class="owner-content">
             <span class="script-accent">Meet the founder</span>
@@ -2667,11 +2686,8 @@
                 <span class="service-item-duration">1h</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R765,00</span>
-                <span class="service-item-original">R850,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R850,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R850,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2685,11 +2701,8 @@
               </div>
               <p class="service-item-desc">We install each lash into the original lash and make sure that the glue is dry.</p>
               <div class="service-item-pricing">
-                <span class="service-item-price">R720,00</span>
-                <span class="service-item-original">R800,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R800,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R800,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2699,11 +2712,8 @@
                 <span class="service-item-duration">1h</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R675,00</span>
-                <span class="service-item-original">R750,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R750,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R750,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2716,11 +2726,8 @@
                 <span class="service-item-duration">2h</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R720,00</span>
-                <span class="service-item-original">R800,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R800,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R800,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2733,11 +2740,8 @@
                 <span class="service-item-duration">1h 30min</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R675,00</span>
-                <span class="service-item-original">R750,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R750,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R750,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2747,11 +2751,8 @@
                 <span class="service-item-duration">30min</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R450,00</span>
-                <span class="service-item-original">R500,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R500,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R500,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2761,11 +2762,8 @@
                 <span class="service-item-duration">30min</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R180,00</span>
-                <span class="service-item-original">R200,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R200,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R200,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2775,11 +2773,8 @@
                 <span class="service-item-duration">30min</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R378,00</span>
-                <span class="service-item-original">R420,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R420,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R420,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2801,11 +2796,8 @@
                 <span class="service-item-duration">30min</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R315,00</span>
-                <span class="service-item-original">R350,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R350,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R350,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2815,11 +2807,8 @@
                 <span class="service-item-duration">2h</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R1 710,00</span>
-                <span class="service-item-original">R1 900,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R1 900,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R1 900,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2829,11 +2818,8 @@
                 <span class="service-item-duration">1h 30min</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R1 215,00</span>
-                <span class="service-item-original">R1 350,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R1 350,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R1 350,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2843,11 +2829,8 @@
                 <span class="service-item-duration">1h 30min</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R1 530,00</span>
-                <span class="service-item-original">R1 700,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R1 700,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R1 700,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2857,11 +2840,8 @@
                 <span class="service-item-duration">1h 30min</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R495,00</span>
-                <span class="service-item-original">R550,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R550,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R550,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2960,11 +2940,8 @@
                 <span class="service-item-duration">6h 30min</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R2 700,00</span>
-                <span class="service-item-original">R3 000,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R3 000,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R3 000,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
@@ -2974,11 +2951,8 @@
                 <span class="service-item-duration">3h 30min</span>
               </div>
               <div class="service-item-pricing">
-                <span class="service-item-price">R1 350,00</span>
-                <span class="service-item-original">R1 500,00</span>
-                <span class="service-item-save">Save 10%</span>
+                <span class="service-item-price">R1 500,00</span>
               </div>
-              <span class="service-item-detail">Lowest price in 30 days, before discount: R1 500,00</span>
               <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
 
