@@ -1057,6 +1057,126 @@
       font-weight: 700;
     }
 
+    /* ───── SERVICE LISTING (compact price list) ───── */
+    .service-category {
+      margin-bottom: 60px;
+    }
+
+    .service-category-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--warm-dark);
+    }
+
+    .service-category-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--pink);
+      border: none;
+      margin-bottom: 28px;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    .service-item {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .service-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .service-item-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--warm-dark);
+    }
+
+    .service-item-duration {
+      font-size: 12px;
+      color: var(--warm-light);
+      font-weight: 500;
+      white-space: nowrap;
+      background: var(--cream-dark);
+      padding: 4px 10px;
+      border-radius: 50px;
+      margin-top: 4px;
+    }
+
+    .service-item-desc {
+      font-size: 13px;
+      color: var(--warm-mid);
+      line-height: 1.5;
+    }
+
+    .service-item-pricing {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .service-item-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--pink-deep);
+    }
+
+    .service-item-original {
+      font-size: 14px;
+      color: var(--warm-light);
+      text-decoration: line-through;
+    }
+
+    .service-item-save {
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+      background: var(--pink);
+      padding: 2px 8px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+    }
+
+    .service-item-detail {
+      font-size: 11px;
+      color: var(--warm-light);
+    }
+
+    .service-item .btn {
+      margin-top: 8px;
+      align-self: flex-start;
+    }
+
+    @media (max-width: 600px) {
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Process */
     .process-section {
       background: var(--cream-dark);
@@ -2010,7 +2130,7 @@
       <ul class="nav-links">
         <li><a onclick="navigate('home')" id="nav-home" class="active">Home</a></li>
         <li><a onclick="navigate('about')" id="nav-about">About</a></li>
-        <li><a onclick="navigate('services')" id="nav-services">Training</a></li>
+        <li><a onclick="navigate('services')" id="nav-services">Services</a></li>
         <li><a onclick="navigate('contact')" id="nav-contact">Contact</a></li>
       </ul>
       <button class="hamburger" onclick="toggleMobileMenu()" id="hamburgerBtn">
@@ -2024,7 +2144,7 @@
     <button class="mobile-close" onclick="toggleMobileMenu()">✕</button>
     <a onclick="navigate('home'); toggleMobileMenu()">Home</a>
     <a onclick="navigate('about'); toggleMobileMenu()">About</a>
-    <a onclick="navigate('services'); toggleMobileMenu()">Training</a>
+    <a onclick="navigate('services'); toggleMobileMenu()">Services</a>
     <a onclick="navigate('contact'); toggleMobileMenu()">Contact</a>
   </div>
 
@@ -2382,15 +2502,338 @@
 
     <section class="services-hero">
       <div class="container">
-        <span class="eyebrow">Training & Education</span>
-        <h1>Start Your Beauty <em style="color:var(--pink-deep)">Journey</em></h1>
-        <p style="max-width:540px;margin:20px auto 0">Practical, affordable, and empowering — our training programmes
-          are designed to take you from beginner to confident beauty business owner.</p>
+        <span class="eyebrow">Our Services</span>
+        <h1>Services & <em style="color:var(--pink-deep)">Pricing</em></h1>
+        <p style="max-width:540px;margin:20px auto 0">From lash extensions to nails and professional training — explore our full range of beauty services at affordable prices.</p>
       </div>
     </section>
 
+    <!-- Lash Services -->
     <section class="section">
       <div class="container">
+        <div class="service-category">
+          <h2 class="service-category-title">Lash Services</h2>
+          <hr class="service-category-divider">
+          <div class="service-list">
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Volume Lashes</span>
+                <span class="service-item-duration">1h</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R765,00</span>
+                <span class="service-item-original">R850,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R850,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Classic Lashes</span>
+                <span class="service-item-duration">1h 20min</span>
+              </div>
+              <p class="service-item-desc">We install each lash into the original lash and make sure that the glue is dry.</p>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R720,00</span>
+                <span class="service-item-original">R800,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R800,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Hybrid Lashes</span>
+                <span class="service-item-duration">1h</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R675,00</span>
+                <span class="service-item-original">R750,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R750,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Whispy Set</span>
+                <span class="service-item-duration">2h</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R720,00</span>
+                <span class="service-item-original">R800,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R800,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Wet Set</span>
+                <span class="service-item-duration">1h 30min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R675,00</span>
+                <span class="service-item-original">R750,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R750,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Lash Fill (2 Weeks)</span>
+                <span class="service-item-duration">30min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R450,00</span>
+                <span class="service-item-original">R500,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R500,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Lash Removal</span>
+                <span class="service-item-duration">30min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R180,00</span>
+                <span class="service-item-original">R200,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R200,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Lash Lift</span>
+                <span class="service-item-duration">30min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R378,00</span>
+                <span class="service-item-original">R420,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R420,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Eyebrow Services -->
+        <div class="service-category">
+          <h2 class="service-category-title">Eyebrow Services</h2>
+          <hr class="service-category-divider">
+          <div class="service-list">
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Henna Eyebrow Tint</span>
+                <span class="service-item-duration">30min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R315,00</span>
+                <span class="service-item-original">R350,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R350,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Permanent Eyebrows – 1st Procedure</span>
+                <span class="service-item-duration">2h</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R1 710,00</span>
+                <span class="service-item-original">R1 900,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R1 900,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Permanent Eyebrows – 2nd Procedure</span>
+                <span class="service-item-duration">1h 30min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R1 215,00</span>
+                <span class="service-item-original">R1 350,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R1 350,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Permanent Eyebrows – 3rd Procedure</span>
+                <span class="service-item-duration">1h 30min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R1 530,00</span>
+                <span class="service-item-original">R1 700,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R1 700,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Brow Lamination</span>
+                <span class="service-item-duration">1h 30min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R495,00</span>
+                <span class="service-item-original">R550,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R550,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Nail Services -->
+        <div class="service-category">
+          <h2 class="service-category-title">Nail Services</h2>
+          <hr class="service-category-divider">
+          <div class="service-list">
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Gel Manicure</span>
+                <span class="service-item-duration">1h</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R450,00</span>
+              </div>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Polygel Set with Tips</span>
+                <span class="service-item-duration">1h</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R500,00</span>
+              </div>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Gel Pedicure</span>
+                <span class="service-item-duration">45min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R590,00</span>
+              </div>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Nail Art (per nail)</span>
+                <span class="service-item-duration">30min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R15,00</span>
+              </div>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Gel Soak Off</span>
+                <span class="service-item-duration">30min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R50,00</span>
+              </div>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Acrylic/Polygel Soak Off</span>
+                <span class="service-item-duration">30min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R100,00</span>
+              </div>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Training -->
+        <div class="service-category">
+          <h2 class="service-category-title">Training</h2>
+          <hr class="service-category-divider">
+          <div class="service-list">
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Lash Training</span>
+                <span class="service-item-duration">6h 30min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R2 700,00</span>
+                <span class="service-item-original">R3 000,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R3 000,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+            <div class="service-item">
+              <div class="service-item-header">
+                <span class="service-item-name">Tint and Shape Training</span>
+                <span class="service-item-duration">3h 30min</span>
+              </div>
+              <div class="service-item-pricing">
+                <span class="service-item-price">R1 350,00</span>
+                <span class="service-item-original">R1 500,00</span>
+                <span class="service-item-save">Save 10%</span>
+              </div>
+              <span class="service-item-detail">Lowest price in 30 days, before discount: R1 500,00</span>
+              <button class="btn btn-primary" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Detailed Training Courses -->
+    <section class="section" style="background:var(--cream-dark)">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:40px">
+          <span class="eyebrow">Training & Education</span>
+          <h2>Training <em style="color:var(--pink-deep)">Courses</em></h2>
+          <p style="max-width:540px;margin:16px auto 0">Practical, affordable, and empowering — our training programmes are designed to take you from beginner to confident beauty business owner.</p>
+        </div>
         <div class="services-grid">
 
           <div class="service-card">
