@@ -220,16 +220,96 @@
     }
 
     .nav-brand {
-      font-family: 'Great Vibes', cursive;
-      font-size: 32px;
-      color: var(--pink-deep);
       cursor: pointer;
       text-decoration: none;
       transition: opacity 0.2s;
+      display: flex;
+      align-items: center;
     }
 
     .nav-brand:hover {
       opacity: 0.8;
+    }
+
+    .nav-logo {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+
+    /* ───── BOTTOM NAV (mobile) ───── */
+    .bottom-nav {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(250, 246, 241, 0.97);
+        backdrop-filter: blur(16px);
+        border-top: 1px solid var(--fawn-light);
+        padding: 8px 0 max(8px, env(safe-area-inset-bottom));
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 0 -4px 24px rgba(58, 46, 40, 0.10);
+      }
+
+      .bottom-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+        padding: 6px 16px;
+        border-radius: 12px;
+        transition: background 0.2s;
+        border: none;
+        background: none;
+        flex: 1;
+      }
+
+      .bottom-nav-item:active {
+        background: var(--fawn-light);
+      }
+
+      .bottom-nav-icon {
+        font-size: 22px;
+        line-height: 1;
+        transition: transform 0.2s;
+      }
+
+      .bottom-nav-item.active .bottom-nav-icon {
+        transform: scale(1.15);
+      }
+
+      .bottom-nav-label {
+        font-family: 'Jost', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: var(--warm-light);
+        transition: color 0.2s;
+      }
+
+      .bottom-nav-item.active .bottom-nav-label {
+        color: var(--pink-deep);
+      }
+
+      /* push page content above bottom nav */
+      body {
+        padding-bottom: 72px;
+      }
+
+      /* hide hamburger — bottom nav replaces it */
+      .hamburger {
+        display: none !important;
+      }
     }
 
     .nav-links {
@@ -2062,10 +2142,6 @@
         grid-template-columns: 1fr;
       }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 1e9fc30b26ad3592302fc3b75948f9d3be95ec9d
       .about-grid,
       .owner-grid,
       .contact-grid {
@@ -2193,7 +2269,9 @@
   <!-- ─── NAVBAR ─────────────────────────────── -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a class="nav-brand" onclick="navigate('home')">Therapic Beauty</a>
+      <a class="nav-brand" onclick="navigate('home')">
+        <img src="logo.png" alt="Therapic Beauty" class="nav-logo" />
+      </a>
       <ul class="nav-links">
         <li><a onclick="navigate('home')" id="nav-home" class="active">Home</a></li>
         <li><a onclick="navigate('about')" id="nav-about">About</a></li>
@@ -3141,6 +3219,10 @@
       document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
       const navEl = document.getElementById('nav-' + page);
       if (navEl) navEl.classList.add('active');
+      // update bottom nav active state
+      document.querySelectorAll('.bottom-nav-item').forEach(el => {
+        el.classList.toggle('active', el.dataset.page === page);
+      });
       window.scrollTo({ top: 0, behavior: 'smooth' });
       if (page === 'shop') renderProducts('all');
     }
@@ -3350,6 +3432,31 @@
       renderFAQs();
     });
   </script>
+
+  <!-- ─── BOTTOM NAV (mobile only) ───────────────────────── -->
+  <nav class="bottom-nav">
+    <button class="bottom-nav-item active" data-page="home" onclick="navigate('home')">
+      <span class="bottom-nav-icon">🏠</span>
+      <span class="bottom-nav-label">Home</span>
+    </button>
+    <button class="bottom-nav-item" data-page="services" onclick="navigate('services')">
+      <span class="bottom-nav-icon">✨</span>
+      <span class="bottom-nav-label">Services</span>
+    </button>
+    <button class="bottom-nav-item" data-page="shop" onclick="navigate('shop')">
+      <span class="bottom-nav-icon">🛍️</span>
+      <span class="bottom-nav-label">Shop</span>
+    </button>
+    <button class="bottom-nav-item" data-page="about" onclick="navigate('about')">
+      <span class="bottom-nav-icon">💕</span>
+      <span class="bottom-nav-label">About</span>
+    </button>
+    <button class="bottom-nav-item" data-page="contact" onclick="navigate('contact')">
+      <span class="bottom-nav-icon">📩</span>
+      <span class="bottom-nav-label">Contact</span>
+    </button>
+  </nav>
+
 </body>
 
 </html>
