@@ -600,11 +600,19 @@
       flex-direction: row;
       overflow-x: auto;
       gap: 16px;
+<<<<<<< HEAD
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       padding-bottom: 12px;
       scrollbar-width: thin;
       scrollbar-color: var(--pink-light) transparent;
+=======
+      padding-bottom: 12px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--pink-deep) var(--cream-dark);
+>>>>>>> 1e9fc30b26ad3592302fc3b75948f9d3be95ec9d
     }
 
     .gallery-strip::-webkit-scrollbar {
@@ -612,16 +620,29 @@
     }
 
     .gallery-strip::-webkit-scrollbar-track {
+<<<<<<< HEAD
       background: transparent;
     }
 
     .gallery-strip::-webkit-scrollbar-thumb {
       background: var(--pink-light);
+=======
+      background: var(--cream-dark);
+      border-radius: 3px;
+    }
+
+    .gallery-strip::-webkit-scrollbar-thumb {
+      background: var(--pink-deep);
+>>>>>>> 1e9fc30b26ad3592302fc3b75948f9d3be95ec9d
       border-radius: 3px;
     }
 
     .gallery-item {
+<<<<<<< HEAD
       flex: 0 0 260px;
+=======
+      flex: 0 0 300px;
+>>>>>>> 1e9fc30b26ad3592302fc3b75948f9d3be95ec9d
       aspect-ratio: 4/5;
       border-radius: 16px;
       overflow: hidden;
@@ -1854,6 +1875,10 @@
         grid-template-columns: 1fr;
       }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1e9fc30b26ad3592302fc3b75948f9d3be95ec9d
       .about-grid,
       .owner-grid,
       .contact-grid {
@@ -1894,7 +1919,83 @@
       }
 
       .contact-form {
+<<<<<<< HEAD
         padding: 32px 24px;
+=======
+        padding: 28px 20px;
+      }
+
+      /* Buttons: ensure tap-friendly size */
+      .btn {
+        padding: 14px 28px;
+        min-height: 48px;
+      }
+
+      .filter-btn {
+        padding: 10px 18px;
+        min-height: 44px;
+      }
+
+      .add-to-cart {
+        padding: 12px 16px;
+        min-height: 44px;
+      }
+
+      /* Social links */
+      .social-links {
+        flex-wrap: wrap;
+      }
+
+      /* Service & product cards */
+      .service-card-img {
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-right {
+        height: 70vw;
+      }
+
+      .hero-left h1 {
+        font-size: clamp(32px, 10vw, 48px);
+      }
+
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .usp-card {
+        padding: 28px 20px;
+      }
+
+      .t-card {
+        padding: 24px 20px;
+      }
+
+      h2 {
+        font-size: clamp(28px, 8vw, 40px);
+      }
+
+      .about-hero,
+      .services-hero,
+      .contact-hero,
+      .shop-hero {
+        padding-top: 120px;
+      }
+
+      .mobile-menu a {
+        font-size: 28px;
+      }
+
+      .nav-brand {
+        font-size: 26px;
+>>>>>>> 1e9fc30b26ad3592302fc3b75948f9d3be95ec9d
       }
     }
   </style>
@@ -2030,7 +2131,7 @@
         </p>
         <div class="hero-ctas fade-up fade-up-delay-2">
           <button class="btn btn-primary" onclick="navigate('services')">Start Your Journey</button>
-          <button class="btn btn-outline" onclick="navigate('shop')">Shop Now</button>
+          <button class="btn btn-outline" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Shop Now</button>
         </div>
         <div class="scroll-indicator">
           <span class="scroll-line"></span>
@@ -2323,7 +2424,7 @@
                 <li>WhatsApp support for 30 days</li>
                 <li>Small group setting (max 6 students)</li>
               </ul>
-              <button class="btn btn-primary" style="width:100%" onclick="navigate('contact')">Book Now</button>
+              <button class="btn btn-primary" style="width:100%" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
           </div>
 
@@ -2345,7 +2446,7 @@
                 <li>60-day WhatsApp mentorship</li>
                 <li>Branded certificate</li>
               </ul>
-              <button class="btn btn-primary" style="width:100%" onclick="navigate('contact')">Book Now</button>
+              <button class="btn btn-primary" style="width:100%" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
           </div>
 
@@ -2366,7 +2467,7 @@
                 <li>90-day mentorship access</li>
                 <li>Advanced practitioner certificate</li>
               </ul>
-              <button class="btn btn-primary" style="width:100%" onclick="navigate('contact')">Book Now</button>
+              <button class="btn btn-primary" style="width:100%" onclick="window.open('http://therapicbeauty.booksy.com/a/','_blank')">Book Now</button>
             </div>
           </div>
 
