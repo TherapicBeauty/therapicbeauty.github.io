@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -1 *.jpeg *.mp4)",
+      "Bash(mv \"eyebrow_pictures.jpeg\" \"eyebrow-treatment-procedure.jpeg\")",
+      "Bash(mv \"hybrid_lashes.jpeg\" \"hybrid-lash-treatment.jpeg\")",
+      "Bash(mv \"work-1.jpeg\" \"lash-extension-work-1.jpeg\")",
+      "Bash(mv \"work-2.jpeg\" \"lash-extension-work-2.jpeg\")",
+      "Bash(mv \"work-3.jpeg\" \"lash-extension-work-3.jpeg\")"
+    ]
+  }
+}
